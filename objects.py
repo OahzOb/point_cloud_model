@@ -28,6 +28,7 @@ class Square(Shape2d):
         edges = [edge] * 4
         return Square(edges=edges)
 
+
 class Rectangle(Shape2d):
     def __init__(self, edges: list):
         self.edges = edges
