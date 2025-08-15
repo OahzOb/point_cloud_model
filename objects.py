@@ -9,6 +9,14 @@ class Shape2d(ABC):
     def area(self):
         pass
 
+    @abstractmethod
+    def get_2d_obbx(self):
+        pass
+
+    @abstractmethod
+    def get_2d_aabbx(self):
+        pass
+
 
 class Square(Shape2d):
     def __init__(self, edges: list):
