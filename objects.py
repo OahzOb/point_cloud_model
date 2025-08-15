@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import numpy as np
+import open3d as o3d
 
 
 class Shape2d(ABC):
@@ -10,12 +11,17 @@ class Shape2d(ABC):
         pass
 
     @abstractmethod
-    def get_2d_obbx(self):
+    def get_2d_obbx(self) -> BoundingBox2d:
         pass
 
     @abstractmethod
-    def get_2d_aabbx(self):
+    def get_2d_aabbx(self) -> BoundingBox2d:
         pass
+
+
+class BoundingBox2d(Shape2d):
+    def __init__(self, edges: list):
+
 
 
 class Square(Shape2d):
