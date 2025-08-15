@@ -21,7 +21,12 @@ class Shape2d(ABC):
 
 class BoundingBox2d(Shape2d):
     def __init__(self, edges: list):
+        self.edges = edges 
+        self._area = edges[0] * edges[1]
 
+    @property
+    def area(self):
+        return self._area
 
 
 class Square(Shape2d):
@@ -86,5 +91,23 @@ class Shape3d(ABC):
 
     @property
     @abstractmethod
-    def area(self):
+    def surface_area(self):
+        pass
+
+    @abstractmethod
+    def get_3d_obbx(self):
+        pass
+
+    @abstractmethod
+    def get_3d_aabbx(self):
+        pass
+
+
+class Cube(Shape3d):
+    def __init__(self):
+        pass
+
+
+class Cuboid(Shape3d):
+    def __init__(self):
         pass
