@@ -3,5 +3,10 @@ import numpy as np
 from objects import Shape2d, Shape3d
 
 
-def get_concave_hull_2d(pcd: Shape2d):
-    pass
+def get_concave_hull_2d(pcd: Shape2d) -> Shape2d:
+    concave_hull = 
+
+    return concave_hull
+
+
+def 
