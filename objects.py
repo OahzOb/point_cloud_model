@@ -11,11 +11,11 @@ class Shape2d(ABC):
         pass
 
     @abstractmethod
-    def get_2d_obbx(self) -> BoundingBox2d:
+    def get_2d_obbx(self):
         pass
 
     @abstractmethod
-    def get_2d_aabbx(self) -> BoundingBox2d:
+    def get_2d_aabbx(self):
         pass
 
 
