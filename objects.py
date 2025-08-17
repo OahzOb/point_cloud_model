@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 import numpy as np
-import open3d as o3d
 
 
 class Shape2d(ABC):
