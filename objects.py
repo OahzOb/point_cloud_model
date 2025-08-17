@@ -19,6 +19,14 @@ class Shape2d(ABC):
         pass
 
 
+def random_polygon(num_vertices: int = 3):
+    radians = (np.random.rand(num_vertices)) * (2 * np.pi)
+    radians = np.sort(radians)
+    vertices_x = np.cos(radians)
+    vertices_y = np.sin(radians)
+    return
+
+
 class BoundingBox2d(Shape2d):
     def __init__(self, edges: list):
         self.edges = edges 
