@@ -18,75 +18,19 @@ class Shape2d(ABC):
         pass
 
 
+class Polygon(Shape2d):
+    def __init__(self, vertices):
+        self.vertices = vertices
+
+
 def random_polygon(num_vertices: int = 3):
     radians = (np.random.rand(num_vertices)) * (2 * np.pi)
     radians = np.sort(radians)
-    vertices_x = np.cos(radians)
-    vertices_y = np.sin(radians)
+    dists = np.random.rand(num_vertices)
+    vertices_x = np.cos(radians) * dists
+    vertices_y = np.sin(radians) * dists
+
     return
-
-
-class BoundingBox2d(Shape2d):
-    def __init__(self, edges: list):
-        self.edges = edges 
-        self._area = edges[0] * edges[1]
-
-    @property
-    def area(self):
-        return self._area
-
-
-class Square(Shape2d):
-    def __init__(self, edges: list):
-        lene = len(edges)
-        if lene < 1:
-            raise ValueError("Can't create a square with 0 edges!")
-        else:
-            edges = edges[0] * 4
-        self.edges = edges
-        self._area = self.edges[0] * self.edges[2]
-    
-    @property
-    def area(self):
-        return self._area
-
-    @classmethod
-    def from_edges(cls, edge):
-        edges = [edge] * 4
-        return Square(edges=edges)
-
-
-class Rectangle(Shape2d):
-    def __init__(self, edges: list):
-        self.edges = edges
-        self._area = self.edge[1] * self.edge[2]
-
-    @property
-    def area(self):
-        return self._area
-
-
-class Triangle(Shape2d):
-    def __init__(self, edges: list, radians: list, angles: list):
-        self.edges = edges
-        self.radians = radians
-        self.angles = angles
-        self._area = self.edges[0] * np.sin(self.radians[0]) * self.edges[1] / 2
-
-    @property
-    def area(self):
-        return self._area
-
-
-class Circle(Shape2d):
-    def __init__(self, radius: float):
-        self.radius = radius
-        self._area = np.pi * (self.radius ** 2)
-
-
-    @property
-    def area(self):
-        return self._area
 
 
 class Shape3d(ABC):
